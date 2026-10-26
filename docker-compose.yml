@@ -1,0 +1,22 @@
+services:
+  server:
+    build:
+      context: ./server
+    develop:
+      watch: 
+        - action: sync  
+          path: ./server
+          target: /app
+          initial_sync: true
+          ignore: 
+           - node_modules
+           - dist
+        - action: rebuild
+          path: ./server/package.json  
+          
+    ports:
+      - "3005:3005"
+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
+//github.com/pitech-rw/mwanga-frontend/
+
+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
