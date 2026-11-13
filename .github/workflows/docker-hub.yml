@@ -52,6 +52,6 @@ jobs:
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/${{ matrix.image }}:latest
             ${{ secrets.DOCKERHUB_USERNAME }}/${{ matrix.image }}:${{ github.sha }}
-          build-args: ${{ matrix.name == 'web' && format('NEXT_PUBLIC_API_URL={0}', vars.NEXT_PUBLIC_API_URL || 'http://localhost:3005') || '' }}
+          build-args: ${{ matrix.name == 'web' && format('NEXT_PUBLIC_API_URL={0}', vars.NEXT_PUBLIC_API_URL || 'https://dev-bn.mwanga.app') || '' }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
