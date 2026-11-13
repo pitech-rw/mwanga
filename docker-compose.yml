@@ -19,6 +19,11 @@ services:
       - "127.0.0.1:3000:3000"
     env_file:
       - .env
+    environment:
+      # Shared .env is for the API — do not inherit PORT=3005 or NODE_ENV=development.
+      PORT: 3000
+      NODE_ENV: production
+      HOSTNAME: 0.0.0.0
     restart: unless-stopped
 
   postgres:
